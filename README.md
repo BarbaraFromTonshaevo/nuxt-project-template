@@ -1,27 +1,27 @@
 # STRUCTURE
 
-/components
-- - /app
-- - /app/footer.vue
-- - /app/header.vue
-- - /app/menu.vue
-- - /app/error
+- /components
+    - /app
+    - /app/footer.vue
+    - /app/header.vue
+    - /app/menu.vue
+    - /app/error
 
-- - /button
-- - /button/burger.vue
-- - /button/icon.vue
-- - /button/base.vue
+- /button
+    - /button/burger.vue
+    - /button/icon.vue
+    - /button/base.vue
 
-- - /card 
+- /card 
 
-- - /container
-- - /container/content.vue
-- - /container/data.vue
+- /container
+    - /container/content.vue
+    - /container/data.vue
 
-- - /form
+- /form
 <!-- - - /form/feedback.vue - form with text, phone, email -->
 
-- - /input
+- /input
 <!-- - - /input/radio.vue
 - - /input/select.vue
 - - /input/text.vue
@@ -29,25 +29,25 @@
 - - /input/email.vue
 - - /input/file.vue -->
 
-- - /popup
+- /popup
 <!-- - - /popup/index.vue
 - - /popup/feedback.vue
 - - /popup/thanks.vue
 - - /popup/error.vue -->
 
-- - /slider
+- /slider
 <!-- - -/slider/index.vue - одиночный слайдер
 - -/slider/gallery.vue - слайдер текстовой страницы -->
 
-- - /ui
+- /ui
 <!-- - - /ui/social.vue - список соц сетей -->
 <!-- - - /ui/accordion.vue - аккордеон  -->
-- - /ui/breadcrumbs.vue - хлебные крошки
-- - /ui/loader.vue - колесо загрузки
-- - /ui/pager.vue - пейджер страницы
-- - /ui/map.vue - обертка для карты
+    - /ui/breadcrumbs.vue - хлебные крошки
+    - /ui/loader.vue - колесо загрузки
+    - /ui/pager.vue - пейджер страницы
+    - /ui/map.vue - обертка для карты
 
-/sections
+- /sections
 
 /pages
 - - /page
