@@ -40,52 +40,53 @@
 - -/slider/gallery.vue - слайдер текстовой страницы -->
 
 - /ui
-<!-- - - /ui/social.vue - список соц сетей -->
-<!-- - - /ui/accordion.vue - аккордеон  -->
     - /ui/breadcrumbs.vue - хлебные крошки
     - /ui/loader.vue - колесо загрузки
     - /ui/pager.vue - пейджер страницы
     - /ui/map.vue - обертка для карты
+<!-- - - /ui/social.vue - список соц сетей -->
+<!-- - - /ui/accordion.vue - аккордеон  -->
+
 
 - /sections
 
-/pages
-- - /page
-- - /page/[id].vue
-- - /index.vue
-- - /[id].vue
-- -/contacts.vue - с работающей картой
+- /pages
+    - /page
+    - /page/[id].vue
+    - /index.vue
+    - /[id].vue
+    - /contacts.vue - с работающей картой
 
-/assets - определиться что там будет***
-- - /style - стили
-- - /style/components
-- - /style/utils
+- /assets - определиться что там будет***
+    - /style - стили
+    - /style/components
+    - /style/utils
 
-/public
-- - /fonts 
-- - /images
-- - /icons
+- /public
+    - /fonts 
+    - /images
+    - /icons
 
-/middleware
-- - / redirect.js
+- /middleware
+    - / redirect.js
 
-/composables
-- - /useDomain.js
+- /composables
+    - /useDomain.js
 
-/stores
-- - /mainInfo.js - информация о всем сайте
+- /stores
+    - /mainInfo.js - информация о всем сайте
 
-/server
+- /server
 
-/utils
+- /utils
 
-/plugin
+- /plugin
 
-/layouts
-- - /default.vue - обычный скролл
-- - /scroll.vue - кастомный скролл
+- /layouts
+    - /default.vue - обычный скролл
+    - /scroll.vue - кастомный скролл
 
-error.vue - здесь должны быть сообщения об ошибках
+- error.vue - здесь должны быть сообщения об ошибках
 
 
 
