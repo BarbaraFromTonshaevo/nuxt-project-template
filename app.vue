@@ -7,6 +7,22 @@
   </NuxtLayout>
 </template>
 
+<script setup>
+// import { onMounted } from "vue";
+// import { useMainInfoStore } from "@/stores/mainInfo";
+// const mainInfoStore = useMainInfoStore();
+// const { data: mainInfoData } = await useFetch("/wsapi/packs/maininfo", {
+//   baseURL: useRuntimeConfig().public.apiBase,
+// });
+// mainInfo.setHeaderData(mainInfoData.value);
+
+//аналитика
+// useHead({
+//   script: [],
+//   noscript: [],
+// });
+</script>
+
 <style lang="scss">
 @use "assets/style/utils/reset";
 
@@ -19,19 +35,3 @@
 @use "assets/style/components/text";
 @use "assets/style/components/section";
 </style>
-
-<script setup>
-import { onMounted } from "vue";
-import { useMainInfoStore } from "@/stores/mainInfo";
-const mainInfoStore = useMainInfoStore();
-// const { data: mainInfoData } = await useFetch("/wsapi/packs/maininfo", {
-//   baseURL: useRuntimeConfig().public.apiBase,
-// });
-// mainInfo.setHeaderData(mainInfoData.value);
-
-//аналитика
-// useHead({
-//   script: [],
-//   noscript: [],
-// });
-</script>

@@ -7,6 +7,14 @@ export default defineNuxtConfig({
   //   pageTransition: { name: 'page', mode: 'out-in' }
   // },
   devtools: { enabled: true },
+  components: [
+    // Импорт компонентов из других директорий, помимо components
+    {
+      path: "~/components",
+      pathPrefix: true,
+    },
+    { path: "~/sections", pathPrefix: true },
+  ],
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE_URL,
@@ -99,10 +107,10 @@ export default defineNuxtConfig({
   ],
   ssr: true,
   modules: [
-    "@nuxtjs/device",
-    // '@pinia/nuxt',
-  ],
-
+    '@nuxt/eslint', 
+    '@nuxtjs/device', 
+    // '@pinia/nuxt', 
+    '@nuxt/image'],
   yandexMaps: {
     apikey: "c9538765-869a-46b8-b15a-dd40230c7ff7",
   },

@@ -8,7 +8,7 @@
     ]"
   >
     <!-- <div class="ticker-initial-content" ref="tickerInitialContent"> -->
-    <div class="ticker-content" ref="tickerContent">
+    <div ref="tickerContent" class="ticker-content">
       <slot />
     </div>
     <!-- <div class="ticker-content" ref="tickerContent"></div> -->
@@ -50,7 +50,7 @@ onMounted(() => {
     tickerWrapper.classList.add("ticker-wrapper");
     // console.log(tickerContentWidth <= tickerWidth);
     if (tickerContentWidth <= tickerWidth) {
-      let countTicker = Math.ceil(tickerWidth / tickerContentWidth);
+      const countTicker = Math.ceil(tickerWidth / tickerContentWidth);
       // console.log(countTicker);
 
       for (let i = 0; i < countTicker; i++) {

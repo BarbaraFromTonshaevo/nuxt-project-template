@@ -1,15 +1,17 @@
 <template>
-  <div class="breadcrumbs container">
+  <div class="breadcrumbs">
     <ul class="breadcrumbs__list">
       <li
-        class="breadcrumbs__item"
-        v-for="(item, index) in navList"
+        v-for="(item, index) in breadcrumbs"
         :key="item.text"
+        class="breadcrumbs__item"
       >
         <NuxtLink
-          :to="localePath(item.url)"
+          :to="item.url"
           class="breadcrumbs__link"
-          :class="{ disabled: index == navList.length - 1 }"
+          :class="{
+            'breadcrumbs__link--disabled': index == breadcrumbs.length - 1,
+          }"
           >{{ item.text }}</NuxtLink
         >
       </li>
@@ -19,65 +21,65 @@
 
 <script setup>
 defineProps({
-  navList: {
-    type: Array,
-    required: false,
-    default: [],
+  data: {
+    type: Array, // указываем, что это массив
+    required: true,
+    validator: function (value) {
+      return value.every((item) => {
+        return typeof item.url === "string" && typeof item.text === "string";
+      });
+    },
   },
 });
 </script>
 
 <style lang="scss">
 .breadcrumbs {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   &__list {
     width: fit-content;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin: 0 auto;
-    justify-content: center;
-    text-align: center;
+    gap: 6px 12px;
+    align-items: center;
   }
   &__item {
-    font-size: 13px;
+    font-size: 16px;
     display: flex;
     gap: 12px;
     &:not(:last-child) {
       &::after {
-        content: "/";
+        content: "";
         display: block;
-        color: var(--text-sec);
+        height: 2px;
+        width: 2px;
+        border-radius: 50%;
+        background-color: var(--breadcrumbs);
+        margin: auto;
       }
     }
   }
   &__link {
-    color: var(--text-sec);
     transition: color var(--time);
     &:hover {
-      color: var(--text-prim);
+      color: var(--text-accent);
     }
-    &.disabled {
+    &--disabled {
       pointer-events: none;
-      color: var(--text-prim);
+      color: var(--breadcrumbs);
     }
+  }
+}
+@include tablet {
+  .breadcrumbs {
+    margin-bottom: 30px;
   }
 }
 @include tablet-s {
   .breadcrumbs {
     margin-bottom: 20px;
-    &__list {
-      gap: 5px;
-    }
     &__item {
-      font-size: 12px;
-      gap: 5px;
-      &:last-child {
-        display: -webkit-box;
-        -webkit-line-clamp: 1; // количество строк
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
+      font-size: 14px;
     }
   }
 }

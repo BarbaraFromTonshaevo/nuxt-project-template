@@ -1,24 +1,24 @@
 <template>
   <!-- <UiLoadingWrapper :status.sync="status" :error.sync="error"> -->
   <div>
-    <UiBreadcrumbs :navList="page.breadcrumbs"></UiBreadcrumbs>
+    <UiBreadcrumbs :nav-list="page.breadcrumbs"/>
     <div class="page-content">
       <section class="article">
         <div class="container">
           <h1 class="page-title">{{ page.title }}</h1>
 
           <div
-            class="content page-mb"
             v-for="(contentItem, index) of page.content"
             :key="'content' + index"
+            class="content page-mb"
             v-html="contentItem"
-          ></div>
+          />
           <div v-if="page.gallery.length > 0">
             <h4 class="page-title">Фотогаллерея</h4>
             <UiSliderGallery
               :slides="page.gallery"
               class="page-mb"
-            ></UiSliderGallery>
+            />
           </div>
         </div>
       </section>

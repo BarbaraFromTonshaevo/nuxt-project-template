@@ -1,13 +1,13 @@
 <template>
   <NuxtLayout>
     <main>
-      <section class="not-found" v-if="error.statusCode == 404">
+      <section v-if="error.statusCode == 404" class="not-found">
         <div class="not-found__container container">
           <img
             class="not-found__img"
             src="/images/placeholder/not-found.jpg"
             alt=""
-          />
+          >
           <h1 class="not-found__title page-title">
             Страница не найдена
           </h1>
@@ -15,7 +15,7 @@
           <NuxtLink to="/" class="not-found__btn btn btn--prim">Главная</NuxtLink>
         </div>
       </section>
-      <section class="not-found" v-else>
+      <section v-else class="not-found">
         <div class="not-found__container container">
           <h1 class="not-found__title page-title">{{ error.statusCode }}</h1>
           <p class="not-found__descr">{{ error.message }}</p>

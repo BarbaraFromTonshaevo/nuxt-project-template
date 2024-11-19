@@ -1,12 +1,14 @@
+
 <template>
-<template>
-    <UiError :title="$t('error')" :message="message"></UiError>
+    <UiError title="Ошибка" :message="message"/>
 </template>
 
-</template>
 
-<script>
-export default {
-    props: ['message']
-}
+<script setup>
+defineProps({
+    message: {
+        type: String,
+        default: 'Error message'
+    }
+})
 </script>

@@ -1,4 +1,4 @@
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to) => {
     if(to.path !== '/') {
       try {
         const response = await fetch(useDomain(to.path));

@@ -1,18 +1,16 @@
 <template>
   <div>
-    <AppHeader :isHidden="mainInfoStore.headerIsHidden"></AppHeader>
+    <AppHeader :is-hidden="mainInfoStore.headerIsHidden"/>
     <main class="main">
       <slot />
     </main>
-    <AppFooter></AppFooter>
+    <AppFooter/>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
 import { useMainInfoStore } from "~/stores/mainInfo";
 const mainInfoStore = useMainInfoStore();
-const route = useRoute();
 
 let lastScrollY = 0; // Для хранения предыдущей позиции прокрутки
 const handleScroll = () => {

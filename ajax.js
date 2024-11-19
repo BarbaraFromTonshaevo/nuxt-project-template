@@ -24,7 +24,7 @@ export default async () => {
             // params: { _format: 'json' }, // add these query params to every request
          });
       } catch (error) {
-         console.log("ajax error");
+         console.log("ajax error:" + error);
       }
    }
    return singleton;

@@ -1,58 +1,60 @@
 <template>
-  <div class="seo-text" :class="{ opened: isOpened },{'without-shield': withoutShield}" ref="root">
-    <div class="seo-text__body" ref="body">
-      <div class="seo-text__content" ref="content">
-        <slot></slot>
+  <div
+    class="seo-text"
+    :class="[
+      { 'seo-text--opened': isOpened },
+      { 'seo-text--without-shield': withoutShield },
+    ]"
+  >
+    <div ref="seoBody" class="seo-text__body">
+      <div ref="seoContent" class="seo-text__content">
+        <slot/>
       </div>
-      <div class="seo-text__shield"></div>
+      <div class="seo-text__shield"/>
     </div>
     <button class="seo-text__btn" @click="toggleText()">
-      <span class="seo-text__close">{{ $t("text-close") }}</span>
-      <span class="seo-text__open">{{ $t("text-open") }}</span>
+      <span class="seo-text__close">Скрыть</span>
+      <span class="seo-text__open">Читать полностью</span>
       <svg>
-        <use xlink:href="/images/icons/sprite.svg#arrow"></use>
+        <use xlink:href="/icons/sprite.svg#arrow"/>
       </svg>
     </button>
   </div>
 </template>
 
-<script>
-export default {
-  props: ["closedHeight"],
-  data: function () {
-    return {
-      isOpened: false,
-      withoutShield: false,
-      bodyElem: null,
-      contentHeight: 0,
-    };
+<script setup>
+import { ref, onMounted } from "vue";
+const props = defineProps({
+  closedHeight: {
+    type: Number,
+    default: 400,
   },
-  mounted() {
-    if (
-      this.closedHeight >
-      this.$el.querySelector(".seo-text__content").clientHeight
-    ) {
-      this.isOpened = true;
-      this.withoutShield = true;
-    } else {
-      this.bodyElem = this.$el.querySelector(".seo-text__body");
-      this.contentHeight =
-        this.$el.querySelector(".seo-text__content").clientHeight;
-      this.bodyElem.style.height = this.closedHeight + "px";
-    }
-  },
-  methods: {
-    toggleText() {
-      this.isOpened = !this.isOpened;
-      if (this.isOpened) {
-        this.bodyElem.style.height =
-          this.$el.querySelector(".seo-text__content").clientHeight + "px";
-      } else {
-        this.bodyElem.style.height = this.closedHeight + "px";
-      }
-    },
-  },
-};
+});
+
+const isOpened = ref(false);
+const withoutShield = ref(false);
+const seoContent = ref(null);
+const seoBody = ref(null);
+const contentHeight = ref(0);
+
+onMounted(() => {
+  if (props.closedHeight > seoContent.value.clientHeight) {
+    isOpened.value = true;
+    withoutShield.value = true;
+  } else {
+    contentHeight.value = seoContent.value.clientHeight;
+    seoBody.value.style.height = props.closedHeight + "px";
+  }
+});
+
+function toggleText() {
+  isOpened.value = !isOpened.value;
+  if (isOpened.value) {
+    seoBody.value.style.height = seoContent.value.clientHeight + "px";
+  } else {
+    seoBody.value.style.height = props.closedHeight + "px";
+  }
+}
 </script>
 
 <style lang="scss">
@@ -62,11 +64,6 @@ export default {
   flex-direction: column;
   gap: 20px;
 
-  &.without-shield {
-    .seo-text__btn {
-      display: none;
-    }
-  }
   &__shield {
     position: absolute;
     bottom: 0;
@@ -105,7 +102,7 @@ export default {
   &__close {
     display: none;
   }
-  &.opened {
+  &--opened {
     .seo-text__shield {
       opacity: 0;
     }
@@ -118,6 +115,11 @@ export default {
       display: block;
     }
     .seo-text__open {
+      display: none;
+    }
+  }
+  &--without-shield {
+    .seo-text__btn {
       display: none;
     }
   }

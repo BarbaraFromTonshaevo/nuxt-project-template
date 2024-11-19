@@ -8,10 +8,13 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "start": "PORT=3001 node .output/server/index.mjs"
+    "start": "PORT=3001 node .output/server/index.mjs",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
+    "@nuxt/eslint": "^0.5.3",
+    "@nuxt/image": "^1.8.1",
     "axios": "^1.6.8",
     "date-fns": "^3.6.0",
     "gsap": "^3.12.5",

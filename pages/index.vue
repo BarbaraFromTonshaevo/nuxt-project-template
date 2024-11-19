@@ -1,14 +1,12 @@
 <template>
   <div>
-    <div class="container">
-      <h1 class="title-h1">
-        Главная
-      </h1>
-    </div>
+    <FrontHero/>
+    <div class="container"/>
   </div>
 </template>
 
 <script setup>
+console.log('front page');
 
 </script>
 

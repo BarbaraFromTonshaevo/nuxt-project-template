@@ -69,6 +69,13 @@ body {
 	box-orient: vertical;
 }
 
+button{
+	background-color: transparent;
+	&:focus{
+		outline: none;
+	}
+}
+
 @include m.laptop {
 	
 }
