@@ -1,33 +1,91 @@
-# PAGES
+# STRUCTURE
 
-    / - Главная страница
-    /brands - Портфель Брендов
-    /brands/[brand] - Бренды продукта
-    /brands/[brand]/[products] - Списки товаров бренда
-    /brands/[brand]/[products]/[product] - Карточка товара
-    /cocktails - Коктейли
-    /cocktails/[cocktail] - Карточка коктейля
-    /career - Карьера
-    /career/[vacancy] - Карточка вакансии
-    /news - Новости
-    /news/[article] - Карточка новости
-    /documents - Документация
-    /contacts - контакты
-    /shops - ФИРМЕННЫЕ МАГАЗИНЫ "СОРДИС" (ФРАНШИЗА)
-    /search - ПОИСК
-    /team - команда
-    /charity - благотворительность
-    /distributors - Дистрибьюторам и торговым сетям
-    /export - Экспорт 
-    /page/[id] - текстовая страница
+/components
+- - /app
+- - /app/footer.vue
+- - /app/header.vue
+- - /app/menu.vue
+- - /app/error
 
-    Без api: 
-    /history - история завода + с метатегом
-    /about - о компании СОРДИС + с метатегом
-    /technology - Технология производства + с метатегом
-    /excursion - Экскурсия по заводу + с метатегом
-    /rental-clients - Розничным клиентам + с метатегом
+- - /button
+- - /button/burger.vue
+- - /button/icon.vue
+- - /button/base.vue
 
+- - /card 
+
+- - /container
+- - /container/content.vue
+- - /container/data.vue
+
+- - /form
+<!-- - - /form/feedback.vue - form with text, phone, email -->
+
+- - /input
+<!-- - - /input/radio.vue
+- - /input/select.vue
+- - /input/text.vue
+- - /input/phone.vue
+- - /input/email.vue
+- - /input/file.vue -->
+
+- - /popup
+<!-- - - /popup/index.vue
+- - /popup/feedback.vue
+- - /popup/thanks.vue
+- - /popup/error.vue -->
+
+- - /slider
+<!-- - -/slider/index.vue - одиночный слайдер
+- -/slider/gallery.vue - слайдер текстовой страницы -->
+
+- - /ui
+<!-- - - /ui/social.vue - список соц сетей -->
+<!-- - - /ui/accordion.vue - аккордеон  -->
+- - /ui/breadcrumbs.vue - хлебные крошки
+- - /ui/loader.vue - колесо загрузки
+- - /ui/pager.vue - пейджер страницы
+- - /ui/map.vue - обертка для карты
+
+/sections
+
+/pages
+- - /page
+- - /page/[id].vue
+- - /index.vue
+- - /[id].vue
+- -/contacts.vue - с работающей картой
+
+/assets - определиться что там будет***
+- - /style - стили
+- - /style/components
+- - /style/utils
+
+/public
+- - /fonts 
+- - /images
+- - /icons
+
+/middleware
+- - / redirect.js
+
+/composables
+- - /useDomain.js
+
+/stores
+- - /mainInfo.js - информация о всем сайте
+
+/server
+
+/utils
+
+/plugin
+
+/layouts
+- - /default.vue - обычный скролл
+- - /scroll.vue - кастомный скролл
+
+error.vue - здесь должны быть сообщения об ошибках
 
 
 
