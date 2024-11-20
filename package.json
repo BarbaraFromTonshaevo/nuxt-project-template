@@ -20,15 +20,15 @@
     "gsap": "^3.12.5",
     "nuxt": "^3.12.4",
     "pinia": "^2.2.1",
-    "sass": "^1.72.0",
     "swiper": "^11.1.0",
-    "vue": "^3.4.21",
+    "vue": "^3.5.13",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
     "@nuxtjs/device": "^3.1.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
-    "postcss-sort-media-queries": "^5.2.0"
+    "postcss-sort-media-queries": "^5.2.0",
+    "sass": "^1.72.0"
   }
 }

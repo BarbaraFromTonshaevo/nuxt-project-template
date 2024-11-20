@@ -2,7 +2,13 @@
   <div>
     <div class="container">
       <h1 class="title-h1">Текстовая страница</h1>
+      <ContainerContent>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ducimus dolorum molestiae blanditiis sint, provident magnam rerum neque illum laboriosam error placeat earum beatae ut quos quaerat. Est, numquam illo?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ducimus dolorum molestiae blanditiis sint, provident magnam rerum neque illum laboriosam error placeat earum beatae ut quos quaerat. Est, numquam illo?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ducimus dolorum molestiae blanditiis sint, provident magnam rerum neque illum laboriosam error placeat earum beatae ut quos quaerat. Est, numquam illo?</p>
+      </ContainerContent>
     </div>
+
     <!-- <UiBreadcrumbs :navList="page.breadcrumbs"></UiBreadcrumbs>
     <div class="page-content">
       <section class="article">

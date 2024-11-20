@@ -17,9 +17,9 @@ const handleScroll = () => {
   const currentScrollY = window.scrollY; // Текущая позиция прокрутки
   // Если мы прокручиваем вниз
   if (currentScrollY > lastScrollY) {
-    mainInfo.makeHeaderHidden(); // Скрыть шапку
+    mainInfoStore.makeHeaderHidden(); // Скрыть шапку
   } else {
-    mainInfo.makeHeaderVisible(); // Показать шапку
+    mainInfoStore.makeHeaderVisible(); // Показать шапку
   }
   lastScrollY = currentScrollY; // Обновляем последнюю позицию прокрутки
 };
@@ -48,7 +48,9 @@ onBeforeUnmount(() => {
 // body {
   // padding-top: calc(var(--header-height) + var(--header-main-gap));
 // }
+
 .main {
+  // min-height: calc(100vh - (var(--header-height) + var(--header-main-gap)));
   min-height: 100vh;
   padding-top: calc(var(--header-height) + var(--header-main-gap));
 }
