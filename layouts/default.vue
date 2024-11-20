@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader :is-hidden="mainInfoStore.headerIsHidden"/>
+    <AppHeader/>
     <main class="main">
       <slot />
     </main>
