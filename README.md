@@ -88,7 +88,7 @@
 
 - error.vue - здесь должны быть сообщения об ошибках
 
-
+- hehe
 
 # Nuxt 3 Minimal Starter
 
